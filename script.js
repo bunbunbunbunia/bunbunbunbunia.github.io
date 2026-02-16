@@ -49,10 +49,10 @@ noButton.addEventListener("click", function () {
   }
 
   // 图片变化（前 5 次变化）
-  if (clickCount === 1) mainImage.src = "images/shocked.png"; // 震惊
-  if (clickCount === 2) mainImage.src = "images/think.png"; // 思考
-  if (clickCount === 3) mainImage.src = "images/angry.png"; // 生气
-  if (clickCount === 4) mainImage.src = "images/crying.png"; // 哭
+  if (clickCount === 1) mainImage.src = "images/求求你1.png"; // 震惊
+  if (clickCount === 2) mainImage.src = "images/求求你2.png"; // 思考
+  if (clickCount === 3) mainImage.src = "images/求求你3.png"; // 生气
+  if (clickCount === 4) mainImage.src = "images/求求你4.png"; // 哭
   if (clickCount >= 5) mainImage.src = "images/crying.png"; // 之后一直是哭
 });
 
@@ -77,4 +77,5 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
