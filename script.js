@@ -23,7 +23,7 @@ const noTexts = [
   "nop😒",
   "i’m not ready to forgive you.still annoyed😒",
   "hmm...say sorry one more time?",
-  "fine...i miss you a little🙄",
+  "fine...i guess i miss you a little too🙄",
 ];
 
 // No 按钮点击事件
@@ -77,3 +77,4 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
