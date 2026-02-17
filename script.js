@@ -39,7 +39,8 @@ noButton.addEventListener("click", function () {
   noButton.style.transform = `translateX(${noOffset}px)`;
 
   // 让图片和文字往上移动
-  let moveUp = clickCount * 25;
+  const maxMoveUp = 120;
+ let moveUp = Math.min(clickCount * 25, maxMoveUp);
   mainImage.style.transform = `translateY(-${moveUp}px)`;
   questionText.style.transform = `translateY(-${moveUp}px)`;
 
@@ -77,6 +78,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
