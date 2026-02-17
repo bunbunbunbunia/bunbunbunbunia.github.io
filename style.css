@@ -15,10 +15,11 @@ body {
     max-width: 500px; /* 最大宽度限制 */
 }
 
-#mainImage {
-    width: 100%; /* 图片宽度自适应容器 */
-    max-width: 200px; /* 最大宽度限制 */
-    transition: all 0.3s ease;
+#mainImage{
+  width: min(80vw, 520px);  /* 手机上跟着屏幕变大，上限520 */
+  max-width: none;          /* 取消200px的限制 */
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 h1 {
@@ -67,7 +68,7 @@ button {
 
 .yes-image {
     width: 50%; /* 图片宽度自适应容器 */
-    max-width: 300px; /* 最大宽度限制 */
+    max-width: 520px; /* 最大宽度限制 */
 }
 
 /* 电脑端样式优化 */
@@ -106,3 +107,4 @@ button {
         width: 300px; /* 固定图片宽度 */
     }
 }
+
