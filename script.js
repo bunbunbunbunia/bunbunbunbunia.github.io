@@ -58,7 +58,7 @@ noButton.addEventListener("click", function () {
 });
 
 // Yes 按钮点击后，进入表白成功页面
-const loveTest = `！！！咪天宏！！！我爱你！！！！( >᎑<)♡︎ᐝ  ${
+const loveTest = `咪天宏！！！我爱你！！！！( >᎑<)♡︎ᐝ  ${
   username ? `${safeUsername}  ♡︎ᐝ(>᎑< )` : ""
 }`;
 
@@ -67,7 +67,7 @@ yesButton.addEventListener("click", function () {
   document.body.innerHTML = `
         <div class="yes-screen">
             <h1 class="yes-text"></h1>
-            <img src="images/求求你6.png" alt="" class="yes-image">
+            <img src="images/和好啦.png" alt="" class="yes-image">
         </div>
     `;
 
@@ -78,6 +78,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
