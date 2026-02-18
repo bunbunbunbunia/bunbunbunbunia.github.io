@@ -121,23 +121,21 @@ const loveTest = `咪天宏！！！<br>我爱你！！！！( >᎑<)♡︎ᐝ  
 }`;
 
 yesButton.addEventListener("click", function () {
-  startMusic(); 
-  // 先创建基础 HTML 结构
-  document.body.innerHTML = `
-        <div class="yes-screen">
-            <img src="images/和好啦.png" alt="" class="yes-image">
-            <h1 class="yes-text"></h1>
-        </div>
-    `;
+  startMusic();
 
-  // 确保用户名安全地插入
+  // ✅ 只替换 container，不动 body，所以 audio 还在，音乐不会停
+  const container = document.getElementById("container");
+  container.innerHTML = `
+    <div class="yes-screen">
+      <img src="images/和好啦.png" alt="" class="yes-image">
+      <h1 class="yes-text"></h1>
+    </div>
+  `;
+
   document.querySelector(".yes-text").innerHTML = loveTest;
-
-
-  // 禁止滚动，保持页面美观
   document.body.style.overflow = "hidden";
-
 });
+
 
 
 
