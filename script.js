@@ -93,10 +93,10 @@ if (clickCount >= 5) {
   questionText.style.marginTop = "8px";
 
   // 🔴 让求求你6随着点击次数继续变大
-  let grow = 0.72 + (clickCount - 5) * 0.06;
+  let grow = 0.72 + (clickCount - 5) * 0.1;
 
   // 🔴 上限，防止太大挡住文字（可自己调）
-  if (grow > 1.4) grow = 1.4;
+  if (grow > 1.6) grow = 1.6;
 
   mainImage.style.scale = String(grow);
 }
@@ -124,6 +124,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
