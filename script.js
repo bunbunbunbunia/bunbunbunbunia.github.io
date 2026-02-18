@@ -85,7 +85,7 @@ if (clickCount === 3) {
 if (clickCount === 4) {
   mainImage.src = "images/求求你5.png";
   questionText.style.marginTop = "8px";
-  mainImage.style.scale = "0.78";   // ← 只缩这张
+  mainImage.style.scale = "1";   // ← 只缩这张
 }
 
 if (clickCount >= 5) {
@@ -124,6 +124,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
