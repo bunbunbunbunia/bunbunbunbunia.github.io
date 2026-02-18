@@ -28,17 +28,6 @@ preloadImages.forEach((src) => {
   img.src = src;
 });
 
-// 🔴🔴🔴 NEW: 自动让“Can I still be your Valentine...?” 贴近图片（丝滑）
-function adjustQuestionSpacing() {
-  requestAnimationFrame(() => {
-    const imgHeight = mainImage.offsetHeight;
-    const spacing = Math.max(6, 28 - imgHeight * 0.03); // 数字可微调
-    questionText.style.marginTop = `${spacing}px`;
-  });
-}
-
-// 🔴🔴🔴 NEW: 每次图片加载完再调一次（防止切图后晚一拍）
-mainImage.onload = adjustQuestionSpacing;
 
 let clickCount = 0; // 记录点击 No 的次数
 
@@ -64,27 +53,10 @@ noButton.addEventListener("click", function () {
   noButton.style.transform = `translateX(${noOffset}px)`;
 
   // 让图片和文字往上移动
-  // 🔴🔴🔴 NEW: 上移距离变小 + 给求求你6阶段继续放大
-  const maxMoveUp = 60;
-  let moveUp = Math.min(clickCount * 12, maxMoveUp);
-
-  // 默认缩放
-  let imgScale = 1;
-
-  // 只缩 求求你5 / 求求你6（让它们别太大）
-  if (clickCount === 4) imgScale = 0.78;
-  if (clickCount >= 5) imgScale = 0.72;
-
-  // 🔴🔴🔴 NEW: 到求求你6阶段（第6/7/8/9...次）继续变大
-  if (clickCount >= 6) {
-    imgScale = Math.min(0.72 + (clickCount - 5) * 0.06, 1.20); 
-    // 0.06 越大变大越快；1.20 是上限避免顶出屏幕
-  }
-
-  // 合并 transform（丝滑）
-  mainImage.style.transform = `translateY(-${moveUp}px) scale(${imgScale})`;
+  const maxMoveUp = 120;
+ let moveUp = Math.min(clickCount * 25, maxMoveUp);
+  mainImage.style.transform = `translateY(-${moveUp}px)`;
   questionText.style.transform = `translateY(-${moveUp}px)`;
-
 
   // No 文案变化（前 5 次变化）
   if (clickCount <= 5) {
@@ -94,27 +66,27 @@ noButton.addEventListener("click", function () {
   // 图片变化（前 5 次变化）
 if (clickCount === 1) {
   mainImage.src = "images/求求你2.png";
-  adjustQuestionSpacing();
+  mainImage.style.scale = "1";
 }
 
 if (clickCount === 2) {
   mainImage.src = "images/求求你3.png";
-  adjustQuestionSpacing();
+  mainImage.style.scale = "1";
 }
 
 if (clickCount === 3) {
   mainImage.src = "images/求求你4.png";
-  adjustQuestionSpacing();
+  mainImage.style.scale = "1";
 }
 
 if (clickCount === 4) {
   mainImage.src = "images/求求你5.png";
-  adjustQuestionSpacing();
+  mainImage.style.scale = "0.78";   // ← 只缩这张
 }
 
 if (clickCount >= 5) {
   mainImage.src = "images/求求你6.png";
-  adjustQuestionSpacing();
+  mainImage.style.scale = "0.72";   // ← 只缩最后一张
 }
 
 });
@@ -141,8 +113,6 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
-
-
 
 
 
