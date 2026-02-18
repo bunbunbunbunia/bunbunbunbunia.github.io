@@ -2,6 +2,18 @@ let yesButton = document.getElementById("yes");
 let noButton = document.getElementById("no");
 let questionText = document.getElementById("question");
 let mainImage = document.getElementById("mainImage");
+// 🔴🔴🔴 MUSIC START
+const bgm = document.getElementById("bgm");
+let musicStarted = false;
+
+function startMusic() {
+  if (musicStarted) return;
+  musicStarted = true;
+
+  bgm.volume = 0.35;
+  bgm.play().catch(() => {});
+}
+// 🔴🔴🔴 MUSIC END
 
 const params = new URLSearchParams(window.location.search);
 let username = params.get("name");
@@ -42,6 +54,7 @@ const noTexts = [
 
 // No 按钮点击事件
 noButton.addEventListener("click", function () {
+  startMusic(); 
   clickCount++;
 
   // 让 Yes 变大，每次放大 2 倍
@@ -108,6 +121,7 @@ const loveTest = `咪天宏！！！<br>我爱你！！！！( >᎑<)♡︎ᐝ  
 }`;
 
 yesButton.addEventListener("click", function () {
+  startMusic(); 
   // 先创建基础 HTML 结构
   document.body.innerHTML = `
         <div class="yes-screen">
@@ -124,6 +138,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
