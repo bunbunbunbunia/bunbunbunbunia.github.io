@@ -98,7 +98,7 @@ if (clickCount === 3) {
 if (clickCount === 4) {
   mainImage.src = "images/求求你5.png";
   questionText.style.marginTop = "8px";
-  mainImage.style.scale = "0.9";   // ← 只缩这张
+  mainImage.style.scale = "0.87";   // ← 只缩这张
 }
 
 if (clickCount >= 5) {
@@ -106,7 +106,7 @@ if (clickCount >= 5) {
   questionText.style.marginTop = "8px";
 
   // 🔴 让求求你6随着点击次数继续变大
-  let grow = 0.8 + (clickCount - 5) * 0.1;
+  let grow = 0.78 + (clickCount - 5) * 0.1;
 
   // 🔴 上限，防止太大挡住文字（可自己调）
   if (grow > 1.6) grow = 1.6;
@@ -135,6 +135,7 @@ yesButton.addEventListener("click", function () {
   document.querySelector(".yes-text").innerHTML = loveTest;
   document.body.style.overflow = "hidden";
 });
+
 
 
 
