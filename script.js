@@ -58,7 +58,7 @@ noButton.addEventListener("click", function () {
 });
 
 // Yes 按钮点击后，进入表白成功页面
-const loveTest = `咪天宏！！！我爱你！！！！( >᎑<)♡︎ᐝ  ${
+const loveTest = `咪天宏！！！<br>我爱你！！！！( >᎑<)♡︎ᐝ  ${
   username ? `${safeUsername}  ♡︎ᐝ(>᎑< )` : ""
 }`;
 
@@ -72,12 +72,14 @@ yesButton.addEventListener("click", function () {
     `;
 
   // 确保用户名安全地插入
-  document.querySelector(".yes-text").innerText = loveTest;
+  document.querySelector(".yes-text").innerHTML = loveTest;
+
 
   // 禁止滚动，保持页面美观
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
