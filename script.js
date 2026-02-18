@@ -91,9 +91,15 @@ if (clickCount === 4) {
 if (clickCount >= 5) {
   mainImage.src = "images/求求你6.png";
   questionText.style.marginTop = "8px";
-  mainImage.style.scale = "0.72";   // ← 只缩最后一张
-}
 
+  // 🔴 让求求你6随着点击次数继续变大
+  let grow = 0.72 + (clickCount - 5) * 0.06;
+
+  // 🔴 上限，防止太大挡住文字（可自己调）
+  if (grow > 1.4) grow = 1.4;
+
+  mainImage.style.scale = String(grow);
+}
 });
 
 // Yes 按钮点击后，进入表白成功页面
@@ -118,6 +124,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
