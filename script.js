@@ -66,8 +66,8 @@ yesButton.addEventListener("click", function () {
   // 先创建基础 HTML 结构
   document.body.innerHTML = `
         <div class="yes-screen">
-            <h1 class="yes-text"></h1>
             <img src="images/和好啦.png" alt="" class="yes-image">
+            <h1 class="yes-text"></h1>
         </div>
     `;
 
@@ -78,6 +78,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
