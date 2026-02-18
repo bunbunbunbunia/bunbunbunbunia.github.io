@@ -15,6 +15,20 @@ if (username) {
   questionText.innerText = questionText.innerText + safeUsername;
 }
 
+const preloadImages = [
+  "./images/求求你2.png",
+  "./images/求求你3.png",
+  "./images/求求你4.png",
+  "./images/求求你5.png",
+  "./images/求求你6.png",
+];
+
+preloadImages.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
+
+
 let clickCount = 0; // 记录点击 No 的次数
 
 // No 
@@ -50,11 +64,31 @@ noButton.addEventListener("click", function () {
   }
 
   // 图片变化（前 5 次变化）
-  if (clickCount === 1) mainImage.src = "images/求求你2.png"; // 震惊
-  if (clickCount === 2) mainImage.src = "images/求求你3.png"; // 思考
-  if (clickCount === 3) mainImage.src = "images/求求你4.png"; // 生气
-  if (clickCount === 4) mainImage.src = "images/求求你5.png"; // 哭
-  if (clickCount >= 5) mainImage.src = "images/求求你6.png"; // 之后一直是哭
+if (clickCount === 1) {
+  mainImage.src = "images/求求你2.png";
+  mainImage.style.scale = "1";
+}
+
+if (clickCount === 2) {
+  mainImage.src = "images/求求你3.png";
+  mainImage.style.scale = "1";
+}
+
+if (clickCount === 3) {
+  mainImage.src = "images/求求你4.png";
+  mainImage.style.scale = "1";
+}
+
+if (clickCount === 4) {
+  mainImage.src = "images/求求你5.png";
+  mainImage.style.scale = "0.78";   // ← 只缩这张
+}
+
+if (clickCount >= 5) {
+  mainImage.src = "images/求求你6.png";
+  mainImage.style.scale = "0.72";   // ← 只缩最后一张
+}
+
 });
 
 // Yes 按钮点击后，进入表白成功页面
@@ -79,6 +113,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
