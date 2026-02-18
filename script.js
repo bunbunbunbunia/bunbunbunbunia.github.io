@@ -21,9 +21,9 @@ let clickCount = 0; // 记录点击 No 的次数
 const noTexts = [
   "leave me alone bitch",
   "nop😒",
-  "i’m not ready to forgive you.still annoyed😒",
-  "hmm...say sorry one more time?",
-  "fine...i guess i miss you a little too🙄",
+  "i’m not ready to forgive you😒",
+  "hmm say sorry one more time?",
+  "fine i guess i miss you a little too🙄",
 ];
 
 // No 按钮点击事件
@@ -78,6 +78,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
