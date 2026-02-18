@@ -66,26 +66,31 @@ noButton.addEventListener("click", function () {
   // 图片变化（前 5 次变化）
 if (clickCount === 1) {
   mainImage.src = "images/求求你2.png";
+  questionText.style.marginTop = "20px";
   mainImage.style.scale = "1";
 }
 
 if (clickCount === 2) {
   mainImage.src = "images/求求你3.png";
+  questionText.style.marginTop = "20px";
   mainImage.style.scale = "1";
 }
 
 if (clickCount === 3) {
   mainImage.src = "images/求求你4.png";
+  questionText.style.marginTop = "20px";
   mainImage.style.scale = "1";
 }
 
 if (clickCount === 4) {
   mainImage.src = "images/求求你5.png";
+  questionText.style.marginTop = "8px";
   mainImage.style.scale = "0.78";   // ← 只缩这张
 }
 
 if (clickCount >= 5) {
   mainImage.src = "images/求求你6.png";
+  questionText.style.marginTop = "8px";
   mainImage.style.scale = "0.72";   // ← 只缩最后一张
 }
 
@@ -113,6 +118,7 @@ yesButton.addEventListener("click", function () {
   document.body.style.overflow = "hidden";
 
 });
+
 
 
 
